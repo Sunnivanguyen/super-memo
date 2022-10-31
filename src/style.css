@@ -1,0 +1,347 @@
+html,
+body {
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+p {
+  margin: 0;
+}
+.header {
+  display: flex;
+  font-family: "Catamaran", sans-serif;
+  color: white;
+  background-color: rgb(215, 64, 64);
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 80px;
+}
+.header-home {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header-home h3 {
+  margin-left: 5px;
+}
+.header nav h3 {
+  display: inline-block;
+}
+
+.header-english,
+.header-chinese {
+  padding-left: 7px;
+  color: white;
+  cursor: pointer;
+}
+.ri-home-3-line {
+  color: white;
+  cursor: pointer;
+}
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+.custom-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 40px;
+  height: 90px;
+}
+.deck-grid,
+.card-grid {
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.new-deck-btn,
+.first-deck-btn,
+.new-flashcard-btn,
+.first-flashcard-btn {
+  background-color: rgb(230, 60, 60);
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+  transition: width 400ms height 400ms background-color 400ms;
+  height: 50px;
+}
+.new-deck-btn:hover,
+.first-deck-btn:hover,
+.new-flashcard-btn:hover,
+.first-flashcard-btn:hover {
+  height: 55px;
+  width: 185px;
+  background-color: rgb(208, 35, 35);
+}
+.first-deck_container,
+.first-card_container {
+  display: flex;
+  justify-content: center;
+}
+.first-deck-btn,
+.first-flashcard-btn {
+  position: absolute;
+  top: 50%;
+}
+.card {
+  margin: 0;
+  padding: 10px 10px;
+}
+
+.card-item {
+  position: relative;
+  height: fit-content;
+  min-height: 200px;
+  min-width: 200px;
+  background-color: white;
+  color: black;
+  border: 2px solid rgb(215, 64, 64);
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: 250ms;
+}
+
+.card-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.4);
+}
+.card-body {
+  width: fit-content;
+  margin: 20px 20px;
+}
+.ri-edit-2-line,
+.ri-delete-bin-6-line,
+.ri-heart-3-line,
+.ri-heart-3-fill {
+  color: rgb(215, 64, 64);
+  position: absolute;
+  cursor: pointer;
+}
+.ri-edit-2-line {
+  left: 5px;
+}
+.ri-delete-bin-6-line {
+  right: 5px;
+}
+.ri-heart-3-line,
+.ri-heart-3-fill {
+  bottom: 10px;
+  right: 5px;
+}
+.english_card {
+  font-family: "Catamaran";
+}
+.chinese_card {
+  font-family: "Ma Shan Zheng", cursive;
+}
+.chinese_card p {
+  font-size: 22px;
+}
+.card-reviewed {
+  background-color: white;
+  width: 400px;
+  min-height: 300px;
+  color: black;
+  border: 2px solid rgb(215, 64, 64);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 250ms;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateY(var(--rotate-y, 0))
+    translateY(var(--translate-y, 0));
+}
+.card-body_reviewed {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card-reviewed:hover {
+  --translate-y: -2px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+}
+.card-reviewed.flip {
+  --rotate-y: 180deg;
+}
+.card-body_reviewed .front,
+.card-body_reviewed .back {
+  position: absolute;
+  margin: 20px 15px;
+}
+.card-reviewed .back {
+  transform: rotateY(180deg);
+}
+
+.card-check-box {
+  position: fixed;
+  bottom: 0%;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.check_card {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rotate-icon {
+  height: 40px;
+  background-color: rgb(236, 46, 46);
+  padding: 0 6px;
+  border: none;
+  border-radius: 50%;
+}
+.ri-arrow-left-s-line,
+.ri-arrow-right-s-line {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  color: white;
+}
+.ri-arrow-left-s-line {
+  left: 5px;
+}
+.ri-arrow-right-s-line {
+  right: 5px;
+}
+
+.ri-close-line {
+  color: red;
+  cursor: pointer;
+}
+.ri-check-line {
+  color: green;
+  cursor: pointer;
+}
+.review-btn,
+.edit-btn {
+  color: black;
+  font-weight: 700;
+  font-size: 18px;
+  background-color: white;
+  width: 80px;
+  height: 36px;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.ri-close-fill {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: white;
+  cursor: pointer;
+}
+.editor,
+.create-card {
+  display: flex;
+  height: 420px;
+  width: 450px;
+  font-family: "Catamaran";
+  background-color: white;
+  color: black;
+  border: 2px solid rgb(215, 64, 64);
+  border-radius: 10px;
+  margin: 0;
+  padding: 10px;
+  justify-content: center;
+}
+.question,
+.answer {
+  height: 300px;
+  width: 420px;
+}
+.save-btn_box {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+.save-btn {
+  align-self: center;
+  background-color: white;
+  border-style: solid;
+  border-radius: 7px;
+  border-color: brown;
+  padding: 5px 15px;
+  cursor: pointer;
+  color: rgb(187, 35, 35);
+  font-weight: bold;
+  font-size: 16px;
+  transition: height 400ms width 400ms box-shadow 400ms;
+}
+.save-btn:hover {
+  height: 36px;
+  width: 75px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+}
+.global-keyboard {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(140, 140, 140);
+  margin: 20px 20px;
+  width: 400px;
+  padding-bottom: 15px;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+}
+.keyboard-header {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: rgb(118, 118, 118);
+}
+.keyboard-header p {
+  font-size: 12px;
+  color: white;
+}
+.ri-global-line {
+  color: white;
+  margin-right: 5px;
+}
+.english-keyboard,
+.chinese-keyboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 360px;
+}
+.english_key,
+.chinese_key {
+  width: 33px;
+  height: 30px;
+  margin: 0;
+  border: 1px solid rgb(180, 179, 179);
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+}
