@@ -1,4 +1,4 @@
-import { nanoid, random } from "nanoid";
+import { nanoid } from "nanoid";
 import React, { useEffect, useState } from "react";
 
 const Context = React.createContext();
@@ -13,8 +13,7 @@ function ContextProvider(props) {
   const [currentChineseDeckId, setCurrentChineseDeckId] = useState("");
   const [newDeckName, setNewDeckName] = useState("");
   const [updatedDeckName, setUpdatedDeckName] = useState("");
-  const [img, setImg] = useState("");
-  const [randomImg, setRandomImg] = "";
+  const [imgURL, setImgURL] = useState("");
   const [englishCards, setEnglishCards] = useState(
     JSON.parse(localStorage.getItem("english_cards")) || []
   );
@@ -47,14 +46,21 @@ function ContextProvider(props) {
     updatedQuestion,
     englishDecks,
   ]);
+  const [img, setImg] = useState("");
+  const [res, setRes] = useState([]);
 
   function createNewEnglishDeck() {
+    setIsCreated(false);
     const newEngDeck = {
       id: newDeckId,
       type: "english_set",
       name: newDeckName,
-      image: img || randomImg,
+      image: imgURL,
+      cards: englishCards,
     };
+    setEnglishDecks((prevDecks) => [newEngDeck, ...prevDecks]);
+    setCurrentEnglishDeckId(newDeckId);
+    console.log(newEngDeck);
   }
 
   function createNewDeck() {
@@ -291,6 +297,16 @@ function ContextProvider(props) {
         currentKeyValue,
         setCurrentKeyValue,
         createNewDeck,
+        img,
+        setImg,
+        res,
+        setRes,
+        imgURL,
+        setImgURL,
+        newDeckName,
+        setNewDeckName,
+        createNewEnglishDeck,
+        currentEnglishDeckId,
       }}
     >
       {props.children}

@@ -10,8 +10,11 @@ export default function EnglishCardSets() {
       {englishDecks.length > 0 ? (
         <div className="container">
           <div className="custom-grid">
-            <button className="new-deck-btn">Create A New Deck</button>
-            <div className="deck-grid" onClick={createNewDeck}>
+            <button className="new-deck-btn" onClick={createNewDeck}>
+              Create A New Deck
+            </button>
+            {isCreated && <NewEnglishDeck />}
+            <div className="deck-grid">
               <DeckItem />
             </div>
           </div>
